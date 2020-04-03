@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallContoller : MonoBehaviour
 {
-    float Speed = 20.0f;
+    float Speed = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
