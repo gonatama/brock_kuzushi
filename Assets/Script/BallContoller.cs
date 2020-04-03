@@ -32,7 +32,7 @@ public class BallContoller : MonoBehaviour
         if(up >= 1000)
         {
             up = 0;
-            ball.AddForce(transform.forward * 5, ForceMode.Force);
+            ball.AddForce(transform.forward * 100, ForceMode.Force);
             Debug.Log("速度上昇");
 
         }
