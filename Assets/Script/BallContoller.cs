@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallContoller : MonoBehaviour
 {
     float Speed = 15.0f;
-    //int up = 0;
+    int up = 0;
     private Rigidbody ball;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,7 @@ public class BallContoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        up++;
         if(Mathf.Abs(ball.velocity.z) < 3f)
         {
             ball.velocity = new Vector3(ball.velocity.x, ball.velocity.y, ball.velocity.z * 3f);
@@ -28,5 +29,12 @@ public class BallContoller : MonoBehaviour
             ball.velocity = new Vector3(ball.velocity.x * 3f, ball.velocity.y, ball.velocity.z);
         }
 
+        if(up >= 1000)
+        {
+            up = 0;
+            ball.AddForce(transform.forward * 5, ForceMode.Force);
+            Debug.Log("速度上昇");
+
+        }
     }
 }
